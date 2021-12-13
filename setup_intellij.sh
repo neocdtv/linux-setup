@@ -1,21 +1,30 @@
 #!/bin/bash
-INTELLIJ_DIR=$HOME/Apps/intellij
-mkdir -p $INTELLIJ_DIR
-cd $INTELLIJ_DIR
-curl --progress-bar -L -O https://download-cf.jetbrains.com/idea/ideaIC-2020.1.2.tar.gz
-tar -xzvf ideaIC-2020.1.2.tar.gz
-rm ideaIC-2020.1.2.tar.gz
-chmod -R a+rwx idea-IC-201.7846.76
+INTELLIJ_NAME=ideaIU-2019.2.4
+INTELLIJ_NAME_EXTRACTED=idea-IU-192.7142.36
+INTELLIJ_HOME=$HOME/apps/intellij
+mkdir -p $INTELLIJ_HOME
+cd $INTELLIJ_HOME
+if [ ! -f "$INTELLIJ_NAME.tar.gz" ]; then
+    curl --progress-bar -L -O "https://download.jetbrains.com/idea/$INTELLIJ_NAME.tar.gz"
+fi
+if [ ! -d "$INTELLIJ_NAME_EXTRACTED" ]; then
+	tar -xvf "$INTELLIJ_NAME.tar.gz"
+fi
 
-echo '#!/usr/bin/env xdg-open' >> $HOME/Desktop/Intellij.desktop
-echo '[Desktop Entry]' >> $HOME/Desktop/Intellij.desktop
-echo 'Version=1.0' >> $HOME/Desktop/Intellij.desktop
-echo 'Type=Application' >> $HOME/Desktop/Intellij.desktop
-echo 'Terminal=false' >> $HOME/Desktop/Intellij.desktop
-echo "Icon=$INTELLIJ_DIR/idea-IC-201.7846.76/bin/idea.svg" >> $HOME/Desktop/Intellij.desktop
-echo "Icon[en_US]=$INTELLIJ_DIR/idea-IC-201.7846.76/bin/idea.svg" >> $HOME/Desktop/Intellij.desktop
-echo 'Name[en_US]=Intellij' >> $HOME/Desktop/Intellij.desktop
-echo "Exec=$INTELLIJ_DIR/idea-IC-201.7846.76/bin/idea.sh" >> $HOME/Desktop/Intellij.desktop
-echo 'Name=Intellij' >> $HOME/Desktop/Intellij.desktop
+LAUNCHER=$HOME/Desktop/Intellij.desktop
 
-chmod a+rwx $HOME/Desktop/Intellij.desktop
+if [ ! -f "$LAUNCHER" ]; then
+    echo '#!/usr/bin/env xdg-open' >> $LAUNCHER
+    echo '[Desktop Entry]' >> $LAUNCHER
+    echo 'Version=1.0' >> $LAUNCHER
+    echo 'Type=Application' >> $LAUNCHER
+    echo 'Terminal=false' >> $LAUNCHER
+    echo "Icon=$INTELLIJ_HOME/$INTELLIJ_NAME_EXTRACTED/bin/idea.svg" >> $LAUNCHER
+    echo "Icon[en_US]=$INTELLIJ_HOME/$INTELLIJ_NAME_EXTRACTED/bin/idea.svg" >> $LAUNCHER
+    echo 'Name[en_US]=Intellij' >> $LAUNCHER
+    echo "Exec=$INTELLIJ_HOME/$INTELLIJ_NAME_EXTRACTED/bin/idea.sh" >> $LAUNCHER
+    echo 'Name=Intellij' >> $LAUNCHER
+
+    chmod a+rwx $LAUNCHER
+fi
+
