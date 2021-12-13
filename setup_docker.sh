@@ -13,4 +13,5 @@ curl --progress-bar -L https://github.com/docker/compose/releases/download/$DOCK
 chmod +x /usr/local/bin/docker-compose
 
 usermod -aG docker $SUDO_USER
+chmod 666 /var/run/docker.sock
 service docker restart
