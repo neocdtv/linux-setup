@@ -5,7 +5,10 @@ curl -fsSL https://download.docker.com/linux/ubuntu/gpg | apt-key add -
 add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $DISTRIB_CODENAME stable"
 apt-get update
 apt-get install -y docker-ce
-echo "{\"experimental\": true}" >> /etc/docker/daemon.json
+# if you run the script mulitple times, you will get multiple entries in deamon.json, which will cause docker to throw strange errors,
+# so watch out with this line, deamon.json, needs to contain well formed json, at least {}
+# TODO: maybe clear every time deamon.json? but then you will loose other settings, so again watch out
+#echo "{\"experimental\": true}" >> /etc/docker/daemon.json
 
 apt install -y jq
 DOCKER_COMPOSE_LATEST=`curl --silent "https://api.github.com/repos/docker/compose/releases/latest" | jq -r .tag_name`
