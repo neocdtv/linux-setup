@@ -2,8 +2,8 @@
 # next line is relvant for linux mint, where the ubuntu version is hidden in lsb-release-> $DISTRIB
 source /etc/upstream-release/lsb-release
 curl -fsSL https://download.docker.com/linux/ubuntu/gpg | apt-key add -
-add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $DISTRIB_CODENAME stable"
-apt-get update
+sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $DISTRIB_CODENAME stable"
+sudo apt-get update
 apt-get install -y docker-ce
 # if you run the script mulitple times, you will get multiple entries in deamon.json, which will cause docker to throw strange errors,
 # so watch out with this line, deamon.json, needs to contain well formed json, at least {}
