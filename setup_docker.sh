@@ -4,15 +4,15 @@ source /etc/upstream-release/lsb-release
 
 # Add Docker's official GPG key:
 sudo apt update
-sudo apt install ca-certificates curl gnupg
+sudo apt install -y ca-certificates curl gnupg
 sudo install -m 0755 -d /etc/apt/keyrings
-curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /etc/apt/keyrings/docker.gpg
-sudo chmod a+r /etc/apt/keyrings/docker.gpg
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /etc/apt/trusted.gpg.d/docker.gpg
+#sudo chmod a+r /etc/apt/trusted.gpg.d/docker.gpg
 
 # Add the repository to Apt sources:
 sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $DISTRIB_CODENAME stable"
 sudo apt update
-sudo apt install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
+sudo apt install -y docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
 #apt install -y jq
 #DOCKER_COMPOSE_LATEST=`curl --silent "https://api.github.com/repos/docker/compose/releases/latest" | jq -r .tag_name`
 #curl --progress-bar -L https://github.com/docker/compose/releases/download/$DOCKER_COMPOSE_LATEST/docker-compose-`uname -s`-`uname -m` > /usr/local/bin/docker-compose
