@@ -1,7 +1,7 @@
 #!/bin/bash
 VSCODE_NAME=code_1.63.0-1638855526_amd64
 VSCODE_NAME_EXTRACTED=dbeaver
-VSCODE_HOME=$HOME/apps/vscode
+VSCODE_HOME=$HOME/Apps/vscode
 INSTALL_HOME=/usr/share/code
 mkdir -p $VSCODE_HOME
 cd $VSCODE_HOME

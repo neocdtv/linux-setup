@@ -1,6 +1,6 @@
 #!/bin/bash
 NODE_NAME=node-v16.13.1-linux-x64
-NODE_HOME=$HOME/apps/nodejs
+NODE_HOME=$HOME/Apps/nodejs
 mkdir -p $NODE_HOME
 chmod -R a+rw $NODE_HOME
 cd $NODE_HOME

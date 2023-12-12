@@ -1,7 +1,7 @@
 #!/bin/bash
 AWS_CLI_NAME=awscli-exe-linux-x86_64
 AWS_CLI_NAME_EXTRACTED=aws
-AWS_CLI_HOME=$HOME/apps/awscliv2
+AWS_CLI_HOME=$HOME/Apps/awscliv2
 mkdir -p $AWS_CLI_HOME
 cd $AWS_CLI_HOME
 if [ ! -f "$AWS_CLI_NAME.zip" ]; then

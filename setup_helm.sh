@@ -1,6 +1,6 @@
 #!/bin/bash
 VERSION="v3.12.0"
-HELM_DIR=$HOME/apps/helm
+HELM_DIR=$HOME/Apps/helm
 mkdir -p $HELM_DIR
 cd $HELM_DIR
 curl --progress-bar -O "https://get.helm.sh/helm-$VERSION-linux-amd64.tar.gz"

@@ -1,6 +1,6 @@
 #!/bin/bash
 JDK_NAME=zulu11.39.15-ca-jdk11.0.7-linux_x64
-JDK_HOME=$HOME/apps/jdks/hotspot/zulu
+JDK_HOME=$HOME/Apps/jdks/hotspot/zulu
 mkdir -p $JDK_HOME
 cd $JDK_HOME
 if [ ! -f "$JDK_NAME.tar.gz" ]; then

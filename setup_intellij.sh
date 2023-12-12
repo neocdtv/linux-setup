@@ -1,7 +1,7 @@
 #!/bin/bash
 INTELLIJ_NAME=ideaIU-2019.2.4
 INTELLIJ_NAME_EXTRACTED=idea-IU-192.7142.36
-INTELLIJ_HOME=$HOME/apps/intellij
+INTELLIJ_HOME=$HOME/Apps/intellij
 mkdir -p $INTELLIJ_HOME
 cd $INTELLIJ_HOME
 if [ ! -f "$INTELLIJ_NAME.tar.gz" ]; then
