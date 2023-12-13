@@ -7,6 +7,8 @@ USER="vagrant"
 GROUP="vagrant"
 mkdir -p $APPS
 mkdir -p $PROJECTS
+sudo chown -R "$USER:$GROUP" $APPS
+sudo chown -R "$USER:$GROUP" $PROJECTS
 
 #sudo -u $USER ../setup_vbox_additions.sh
 sudo -u $USER ../setup_docker.sh
