@@ -13,10 +13,10 @@ curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o 
 sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $DISTRIB_CODENAME stable"
 sudo apt update
 sudo apt install -y docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
-#apt install -y jq
-#DOCKER_COMPOSE_LATEST=`curl --silent "https://api.github.com/repos/docker/compose/releases/latest" | jq -r .tag_name`
-#curl --progress-bar -L https://github.com/docker/compose/releases/download/$DOCKER_COMPOSE_LATEST/docker-compose-`uname -s`-`uname -m` > /usr/local/bin/docker-compose
-#chmod +x /usr/local/bin/docker-compose
+sudo apt install -y jq
+DOCKER_COMPOSE_LATEST=`curl --silent "https://api.github.com/repos/docker/compose/releases/latest" | jq -r .tag_name`
+curl --progress-bar -L https://github.com/docker/compose/releases/download/$DOCKER_COMPOSE_LATEST/docker-compose-`uname -s`-`uname -m` > /usr/local/bin/docker-compose
+chmod +x /usr/local/bin/docker-compose
 
 # if you run the script mulitple times, you will get multiple entries in deamon.json, which will cause docker to throw strange errors,
 # so watch out with this line, deamon.json, needs to contain well formed json, at least {}
