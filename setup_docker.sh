@@ -24,6 +24,8 @@ sudo mv ./docker-compose /usr/local/bin/docker-compose
 # TODO: maybe clear every time deamon.json? but then you will loose other settings, so again watch out
 #echo "{\"experimental\": true}" >> /etc/docker/daemon.json
 
+echo $USER
+echo $SUDO_USER
 sudo usermod -aG docker $SUDO_USER
 sudo chmod 666 /var/run/docker.sock
 sudo service docker restart
