@@ -17,7 +17,7 @@ sudo apt install -y jq
 DOCKER_COMPOSE_LATEST=`curl --silent "https://api.github.com/repos/docker/compose/releases/latest" | jq -r .tag_name`
 sudo curl --progress-bar -L https://github.com/docker/compose/releases/download/$DOCKER_COMPOSE_LATEST/docker-compose-`uname -s`-`uname -m` -o docker-compose
 sudo chmod +x ./docker-compose 
-sudo chmod +x /usr/local/bin/docker-compose
+sudo mv ./docker-compose /usr/local/bin/docker-compose
 
 # if you run the script mulitple times, you will get multiple entries in deamon.json, which will cause docker to throw strange errors,
 # so watch out with this line, deamon.json, needs to contain well formed json, at least {}
