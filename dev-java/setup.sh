@@ -18,5 +18,9 @@ sudo -u $USER ../setup_maven.sh
 sudo -u $USER ../setup_terraform.sh
 #sudo -u $USER ../setup_payara_micro.sh
 sudo -u $USER ../setup_scite.sh
+sudo -u $USER ../setup_vscode.sh
+sudo -u $USER ../setup_nodejs.js
+sudo -u $USER ../setup_aws_cli.sh
+sudo -u $USER ../setup_dbeaver.sh
 
 #su -c ../setup_criu.sh $USER
