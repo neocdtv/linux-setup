@@ -1,6 +1,13 @@
 #!/bin/bash
 # next line is relvant for linux mint, where the ubuntu version is hidden in lsb-release-> $DISTRIB
-source /etc/upstream-release/lsb-release
+# Determine DISTRIB_CODENAME based on the OS
+if [ -f /etc/upstream-release/lsb-release ]; then
+    # Linux Mint: source the upstream release file
+    source /etc/upstream-release/lsb-release
+else
+    # Ubuntu: source the standard lsb-release file
+    source /etc/lsb-release
+fi
 
 # Add Docker's official GPG key:
 sudo apt update
