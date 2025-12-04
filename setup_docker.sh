@@ -1,5 +1,4 @@
 #!/bin/bash
-# next line is relvant for linux mint, where the ubuntu version is hidden in lsb-release-> $DISTRIB
 # Determine DISTRIB_CODENAME based on the OS
 if [ -f /etc/upstream-release/lsb-release ]; then
     # Linux Mint: source the upstream release file
