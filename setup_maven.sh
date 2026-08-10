@@ -6,7 +6,8 @@ MAVEN_VERSION=${1:-3.8.9}
 MAVEN_DIR="$HOME/Apps/maven"
 MAVEN_TAR="apache-maven-$MAVEN_VERSION-bin.tar.gz"
 MAVEN_FOLDER="apache-maven-$MAVEN_VERSION"
-MAVEN_URL="https://dlcdn.apache.org/maven/maven-3/$MAVEN_VERSION/binaries/$MAVEN_TAR"
+#MAVEN_URL="https://dlcdn.apache.org/maven/maven-3/$MAVEN_VERSION/binaries/$MAVEN_TAR"
+MAVEN_URL="https://archive.apache.org/dist/maven/maven-3/$MAVEN_VERSION/binaries/$MAVEN_TAR"
 
 # Create directory and download
 mkdir -p "$MAVEN_DIR"
