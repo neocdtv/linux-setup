@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Default Maven version
-MAVEN_VERSION=${1:-3.9.6}
+MAVEN_VERSION=${1:-3.8.9}
 
 MAVEN_DIR="$HOME/Apps/maven"
 MAVEN_TAR="apache-maven-$MAVEN_VERSION-bin.tar.gz"
